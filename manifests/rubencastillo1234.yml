@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: d3mon5oul06
+  name: rubencastillo1234
 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: d3mon5oul06
+      app: rubencastillo1234
 
   template:
     metadata:
       labels:
-        app: d3mon5oul06
+        app: rubencastillo1234
     spec:
       containers:
       - image: okteto.dev/rubencastillo1234:latest
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: d3mon5oul06
+  name: rubencastillo1234
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
@@ -39,5 +39,5 @@ spec:
   - name: "rubencastillo1234"
     port: 8080
   selector:
-    app: d3mon5oul06
+    app: rubencastillo1234
 
