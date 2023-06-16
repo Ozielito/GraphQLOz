@@ -13,11 +13,11 @@ spec:
         app: ozielito
     spec:
       containers:
-      - image: okteto.dev/rubencastillo1234:latest
-        name: rubencastillo1234
+      - image: okteto.dev/ozielito:latest
+        name: ozielito
         envFrom:
         - configMapRef:
-            name: rubencastillo1234-config
+            name: ozielito-config
         livenessProbe:
           httpGet:
             path: /ht/
@@ -35,7 +35,7 @@ metadata:
 spec:
   type: ClusterIP  
   ports:
-  - name: "rubencastillo1234"
+  - name: "ozielito"
     port: 8080
   selector:
     app: ozielito
