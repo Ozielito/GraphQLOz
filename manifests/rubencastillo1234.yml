@@ -15,11 +15,11 @@ spec:
         app: d3mon5oul06
     spec:
       containers:
-      - image: okteto.dev/centenitoo:latest
-        name: centenitoo
+      - image: okteto.dev/rubencastillo1234:latest
+        name: rubencastillo1234
         envFrom:
         - configMapRef:
-            name: centenitoo-config
+            name: rubencastillo1234-config
         livenessProbe:
           httpGet:
             path: /ht/
@@ -36,7 +36,7 @@ metadata:
 spec:
   type: ClusterIP  
   ports:
-  - name: "centenitoo"
+  - name: "rubencastillo1234"
     port: 8080
   selector:
     app: d3mon5oul06

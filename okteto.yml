@@ -1,6 +1,6 @@
 build:
   d3mon5oul06:  # cambiar por el nombre de tu clúster
-    image: okteto.dev/centenitoo:latest  # cambiar por la dirección de tu imagen en el registro de contenedores
+    image: okteto.dev/rubencastillo1234:latest  # cambiar por la dirección de tu imagen en el registro de contenedores
 
 deploy:
   - okteto build # construye la imagen con los últimos recursos en Kubernetes
