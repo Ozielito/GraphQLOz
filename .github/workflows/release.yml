@@ -46,19 +46,19 @@ jobs:
       run: cat .env
       
     - name: update DEV_SECRET_KEY
-      run: sed -i 's/MY_DEV_SECRET_KEY/${{secrets.DEV_SECRET_KEY}}/g' manifests/rubencastillo1234-configmap.yaml      
+      run: sed -i 's/MY_DEV_SECRET_KEY/${{secrets.DEV_SECRET_KEY}}/g' manifests/ozielito-configmap.yaml      
     - name: update MY_DEV_DATABASE
-      run: sed -i 's/MY_DEV_DATABASE/${{secrets.DEV_DATABASE}}/g' manifests/rubencastillo1234-configmap.yaml      
+      run: sed -i 's/MY_DEV_DATABASE/${{secrets.DEV_DATABASE}}/g' manifests/ozielito-configmap.yaml      
     - name: update MY_DEV_USER
-      run: sed -i 's/MY_DEV_USER/${{secrets.DEV_USER}}/g' manifests/rubencastillo1234-configmap.yaml      
+      run: sed -i 's/MY_DEV_USER/${{secrets.DEV_USER}}/g' manifests/ozielito-configmap.yaml      
     - name: update MY_DEV_PASSWORD
-      run: sed -i 's/MY_DEV_PASSWORD/${{secrets.DEV_PASSWORD}}/g' manifests/rubencastillo1234-configmap.yaml      
+      run: sed -i 's/MY_DEV_PASSWORD/${{secrets.DEV_PASSWORD}}/g' manifests/ozielito-configmap.yaml      
     - name: update MY_DEV_HOST 
-      run: sed -i 's/MY_DEV_HOST/${{secrets.DEV_HOST}}/g' manifests/rubencastillo1234-configmap.yaml      
+      run: sed -i 's/MY_DEV_HOST/${{secrets.DEV_HOST}}/g' manifests/ozielito-configmap.yaml      
     - name: update MY_DEV_PORT 
-      run: sed -i 's/MY_DEV_PORT/${{secrets.DEV_PORT}}/g' manifests/rubencastillo1234-configmap.yaml
+      run: sed -i 's/MY_DEV_PORT/${{secrets.DEV_PORT}}/g' manifests/ozielito-configmap.yaml
     - name: show config 
-      run: cat manifests/rubencastillo1234-configmap.yaml
+      run: cat manifests/ozielito-configmap.yaml
       
     - uses: okteto/context@2.7.0
       with:
@@ -66,5 +66,5 @@ jobs:
     - name: Deploy
       uses: okteto/pipeline@2.7.0
       with:
-        name: rubencastillo1234 # cambiar por su namespace
+        name: ozielito # cambiar por su namespace
         timeout: 10m
