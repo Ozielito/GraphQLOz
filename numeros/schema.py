@@ -38,6 +38,7 @@ class CreateNumero(graphene.Mutation):
     titulo = graphene.String()
     paginas = graphene.Int()
     autor = graphene.String()
+    lanzamiento = graphene.String()
     clasificacion = graphene.Int()
     pais = graphene.String()
     genero = graphene.String()
@@ -52,6 +53,7 @@ class CreateNumero(graphene.Mutation):
         titulo = graphene.String()
         paginas = graphene.Int()
         autor = graphene.String()
+        lanzamiento = graphene.String()
         clasificacion = graphene.Int()
         pais = graphene.String()
         genero = graphene.String()
@@ -60,11 +62,11 @@ class CreateNumero(graphene.Mutation):
         precio = graphene.Int()
 
     #3
-    def mutate(self, info, titulo, paginas, autor, clasificacion, pais, genero, capitulos, serializacion, precio ):
+    def mutate(self, info, titulo, paginas, autor, lanzamiento, clasificacion, pais, genero, capitulos, serializacion, precio ):
         
         user = info.context.user or None
         
-        numero = Numero(titulo = titulo, paginas = paginas, autor = autor, clasificacion = clasificacion, pais = pais, genero = genero, capitulos = capitulos, serializacion = serializacion, precio = precio, posted_by=user,)
+        numero = Numero(titulo = titulo, paginas = paginas, autor = autor, clasificacion = clasificacion, lanzamiento = lanzamiento, pais = pais, genero = genero, capitulos = capitulos, serializacion = serializacion, precio = precio, posted_by=user,)
         numero.save()
 
         return CreateNumero(
@@ -75,6 +77,7 @@ class CreateNumero(graphene.Mutation):
             clasificacion = numero.clasificacion,
             pais = numero.pais,
             genero = numero.genero,
+            lanzamiento = numero.lanzamiento,
             capitulos = numero.capitulos,
             serializacion = numero.serializacion,
             precio = numero.precio,

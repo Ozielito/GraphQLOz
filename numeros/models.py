@@ -6,7 +6,7 @@ from django.conf import settings
 class Numero(models.Model):
     titulo = models.TextField(default='',blank=False)
     paginas =  models.IntegerField(default=0, blank=False)
-    lanzamiento = models.DateField(default=now, blank=False)
+    lanzamiento = models.TextField(default='', blank=False)
     autor = models.TextField(default='',blank=False)
     clasificacion =  models.IntegerField(default=0, blank=False)
     pais = models.TextField(default='',blank=False)
