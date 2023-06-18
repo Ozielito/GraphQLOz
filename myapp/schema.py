@@ -7,7 +7,7 @@ class DataEntryType(DjangoObjectType):
         model = DataEntry
         prompt = DataEntry
         result = DataEntry
-
+ 
 class Query(graphene.ObjectType):
     all_data_entries = graphene.List(DataEntryType)
     data_entries_by_user = graphene.List(DataEntryType, user=graphene.String(required=True))
